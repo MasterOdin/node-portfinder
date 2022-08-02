@@ -69,9 +69,15 @@ function stopServers(callback, index) {
 }
 
 function cleanup(callback) {
-  fs.rmdirSync(path.join(badDir, 'deeply', 'nested'));
-  fs.rmdirSync(path.join(badDir, 'deeply'));
-  fs.rmdirSync(badDir);
+  if (fs.existsSync(path.join(badDir, 'deeply', 'nested'))) {
+    fs.rmdirSync(path.join(badDir, 'deeply', 'nested'));
+  }
+  if (fs.existsSync(path.join(badDir, 'deeply'))) {
+    fs.rmdirSync(path.join(badDir, 'deeply'));
+  }
+  if (fs.existsSync(badDir)) {
+    fs.rmdirSync(badDir);
+  }
   stopServers(callback, 0);
 }
 
