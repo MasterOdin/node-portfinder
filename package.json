@@ -1,7 +1,7 @@
 {
   "name": "portfinder",
   "description": "A simple tool to find an open port on the current machine",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "test": "vows test/*-test.js --spec"
   },
   "engines": {
-    "node": ">= 8.x"
+    "node": ">= 0.12.x"
   },
   "license": "MIT"
 }
